@@ -12,7 +12,7 @@
           <h1 class="title">Login</h1>
           <form action="">
             <input placeholder="Usuário" />
-            <button class="full-width">
+            <button @click="$emit('onLogin')" class="full-width">
               Entrar
             </button>
           </form>

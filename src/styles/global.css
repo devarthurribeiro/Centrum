@@ -22,6 +22,7 @@ button, input {
   margin-bottom: 16px;
   border-radius: 4px;
   font-weight: 700;
+  cursor: pointer;
 }
 
 .full-width {
@@ -34,7 +35,7 @@ button, input {
   flex-flow: column nowrap;
 }
 
-.columns, .content {
+.columns, .content, .flex {
   display: flex;
   flex: 1;
 }
@@ -42,7 +43,7 @@ button, input {
 .flex-center {
   display: flex;
   flex: 1;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
 }
@@ -53,4 +54,13 @@ button, input {
 
 .bg-secondary {
   background-color: #19191D;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.page-title {
+  margin-bottom: 1em;
 }
