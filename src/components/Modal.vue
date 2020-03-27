@@ -1,6 +1,6 @@
 <template>
   <div v-if="show" class="modal">
-    <div @click="$emit('update:show', false)" class="overlay">
+    <div @click.self="$emit('update:show', false)" class="overlay flex-center">
       <div class="modal-content">
         <Card :title="title">
           <slot />
@@ -39,7 +39,6 @@ export default {
 }
 
 .modal .modal-content {
-  margin: 200px auto;
   width: 400px;
 }
 
