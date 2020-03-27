@@ -8,44 +8,29 @@
         </div>
       </div>
       <div class="flex-center bg-primary">
-        <div class="card bg-secondary">
-          <h1 class="title">Login</h1>
-          <form action="">
-            <input placeholder="Usuário" />
-            <button @click="$emit('onLogin')" class="full-width">
+        <Card style="height: 180px;" title="Login">
+          <input placeholder="Usuário" />
+          <button @click="$emit('onLogin')" class="full-width">
               Entrar
-            </button>
-          </form>
-        </div>
+          </button>
+        </Card>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import Card from '../components/Card';
+
 export default {
-  name: "PageLogin"
+  name: "PageLogin",
+  components: {
+    Card
+  }
 }
 </script>
 
 <style>
-
-.card {
-  width: 300px;
-  height: auto;
-  padding: 1em;
-  border-radius: 8px;
-}
-
-.card .title {
-  font-size: 24px;
-  margin-bottom: 16px;
-}
-
-.login .card {
-  height: 180px;
-}
-
 .logo {
   height: 180px;
   text-align: center;
