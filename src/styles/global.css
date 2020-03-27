@@ -59,6 +59,7 @@ button, input {
 .grid-3 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 8px;
 }
 
 .page-title {
