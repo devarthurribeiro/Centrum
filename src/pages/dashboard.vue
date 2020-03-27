@@ -36,6 +36,16 @@ export default {
         name: "RocketApi",
         description: "A free, fast and beautiful API builder 🚀",
         img: "https://image.flaticon.com/icons/svg/544/544578.svg"
+      },
+      {
+        name: "COVID19 Brazil API",
+        description: "API com dados atualizados sobre o status do COVID-19 🦠",
+        img: "https://github.com/devarthurribeiro/covid19-brazil-api/raw/master/api/public/logo.svg?sanitize=true"
+      },
+      {
+        name: "CoronaReport",
+        description: "Reports about COVID19",
+        img: "https://image.flaticon.com/icons/svg/2746/2746595.svg"
       }
     ]
   }),
