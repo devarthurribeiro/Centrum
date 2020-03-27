@@ -10,15 +10,7 @@
       <main>
         <h1 class="page-title">Projetos</h1>
         <div class="grid-3">
-          <div class="card card-project bg-secondary">
-            <header>
-              <img src="https://image.flaticon.com/icons/svg/544/544578.svg" alt="">
-              <h1 class="title">RocketApi</h1>
-            </header>
-            <p>
-              A free, fast and beautiful API builder 🚀
-            </p>
-          </div>
+          <CardProject v-for="project in projects" :project="project" :key="project.name" />
         </div>
       </main>
       <div class="sidenav rigth bg-secondary">
@@ -34,8 +26,22 @@
 </template>
 
 <script>
-export default {
+import CardProject from '../components/CardProject';
 
+export default {
+  name: 'Dashborad',
+  data: () => ({
+    projects: [
+      {
+        name: "RocketApi",
+        description: "A free, fast and beautiful API builder 🚀",
+        img: "https://image.flaticon.com/icons/svg/544/544578.svg"
+      }
+    ]
+  }),
+  components: {
+    CardProject
+  }
 }
 </script>
 
@@ -79,19 +85,5 @@ main {
   height: 60px;
   margin-left: 8px;
 }
-.card-project header {
-  display: flex;
-  flex: 1;
-  flex-direction: row;
-}
 
-.card-project header img {
-  width: 65px;
-  height: 65px;
-  margin-right: 1em;
-}
-
-.card-project .title {
-  line-height: 65px;
-}
 </style>
