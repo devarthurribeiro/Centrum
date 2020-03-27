@@ -4,7 +4,7 @@
       <div class="sidenav bg-secondary">
         <div class="logo flex-center">
           <h1>ProjectBox</h1>
-          <img src="https://image.flaticon.com/icons/svg/679/679821.svg" alt="">
+          <img src="https://image.flaticon.com/icons/svg/679/679821.svg" alt />
         </div>
       </div>
       <main>
@@ -18,19 +18,28 @@
           <div class="avatar">
             <button class="bg-primary">AR</button>
           </div>
-          <button>+</button>
+          <button @click="showModal = true">+</button>
         </div>
       </div>
     </div>
+    <Modal :show.sync="showModal" title="Novo Projeto">
+      <form action>
+        <input placeholder="Nome" />
+        <input placeholder="Git URL" />
+        <button @click="$emit('onLogin')" class="full-width">Salvar</button>
+      </form>
+    </Modal>
   </div>
 </template>
 
 <script>
 import CardProject from '../components/CardProject';
+import Modal from '../components/Modal';
 
 export default {
   name: 'Dashborad',
   data: () => ({
+    showModal: false,
     projects: [
       {
         name: "RocketApi",
@@ -50,13 +59,13 @@ export default {
     ]
   }),
   components: {
-    CardProject
+    CardProject,
+    Modal
   }
 }
 </script>
 
 <style>
-
 main {
   padding: 1em;
   margin-top: 1em;
@@ -70,7 +79,7 @@ main {
 }
 
 .avatar button {
-  color: #4FFA7B;
+  color: #4ffa7b;
   border-radius: 50%;
 }
 
@@ -95,5 +104,4 @@ main {
   height: 60px;
   margin-left: 8px;
 }
-
 </style>
