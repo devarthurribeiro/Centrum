@@ -8,7 +8,7 @@
         </div>
       </div>
       <div class="flex-center bg-primary">
-        <Card style="height: 180px;" title="Login">
+        <Card style="height: 180px; width: 300px" title="Login">
           <input placeholder="Usuário" />
           <button @click="$emit('onLogin')" class="full-width">
               Entrar
