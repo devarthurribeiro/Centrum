@@ -23,10 +23,12 @@
       </div>
     </div>
     <Modal :show.sync="showModal" title="Novo Projeto">
-      <form action>
-        <input placeholder="Nome" />
-        <input placeholder="Git URL" />
-        <button @click="$emit('onLogin')" class="full-width">Salvar</button>
+      <form @submit.prevent="addProject(project)">
+        <input v-model="project.name" placeholder="Nome" />
+        <input v-model="project.description" placeholder="Descrição" />
+        <input v-model="project.gitUrl" placeholder="Git URL" />
+        <input v-model="project.img" placeholder="Logo URL" />
+        <button type="submit" class="full-width">Salvar</button>
       </form>
     </Modal>
   </div>
@@ -38,8 +40,18 @@ import Modal from '../components/Modal';
 
 export default {
   name: 'Dashborad',
+  components: {
+    CardProject,
+    Modal
+  },
   data: () => ({
     showModal: false,
+    project: {
+      name: '',
+      description: '',
+      gitUrl: '',
+      img: ''
+    },
     projects: [
       {
         name: "RocketApi",
@@ -58,9 +70,12 @@ export default {
       }
     ]
   }),
-  components: {
-    CardProject,
-    Modal
+  methods: {
+    addProject(project) {
+      this.projects.push(project)
+      this.project = {}
+      this.showModal = false
+    }
   }
 }
 </script>
